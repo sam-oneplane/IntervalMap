@@ -13,12 +13,13 @@ Each key-value pair (k,v) in interval_map<K,V>::m_map means that the value v is 
 
 Example: Let M be an instance of interval_map<int,char> where
 
-`
+```
 M.m_valBegin=='A',
 M.m_map=={ (1,'B'), (3,'A') },
 Then M represents the mapping
+```
 
-
+```
 ...
 -2 -> 'A'
 -1 -> 'A'
@@ -29,7 +30,8 @@ Then M represents the mapping
 4 -> 'A'
 5 -> 'A'
 ...
-`
+```
+
 The representation in the std::map must be canonical, that is, consecutive map entries must not contain the same value: ..., (3,'A'), (5,'A'), ... is not allowed. Likewise, the first entry in m_map must not contain the same value as m_valBegin. Initially, the whole range of K is associated with a given initial value, passed to the constructor of the interval_map<K,V> data structure.
 
 ### Key type K:
