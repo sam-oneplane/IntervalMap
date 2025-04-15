@@ -61,7 +61,7 @@ public:
             
 		// mark the keyEnd calculated value
 		V endVal = (m_map.contains(keyEnd))? nextVal : std::prev(itEnd)->second;
-        std::cout << "prev " << prevVal << ", next " << nextVal << ", end " << endVal << std::endl; 
+        //std::cout << "prev " << prevVal << ", next " << nextVal << ", end " << endVal << std::endl; 
         // check if val is legal in range [keyBegin, keyEnd)
 		if (!(prevVal == val) && !(val == nextVal))
 		{   
