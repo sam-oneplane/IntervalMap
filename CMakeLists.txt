@@ -9,10 +9,16 @@ set(CMAKE_CXX_COMPILER g++)
 project(interval_map)
 include_directories(include)
 
+add_library(mylib INTERFACE)
+target_include_directories(mylib INTERFACE include)
+
 add_executable(${PROJECT_NAME} main.cpp)
+target_link_libraries(${PROJECT_NAME} mylib)
+
+enable_testing()
+add_subdirectory(test)
 
 # install(TARGETS ${PROJECT_NAME} DESTINATION bin) 
-
 #optional:  sudo make install    (create binary in  /usr/<local>/bin/ )
 
 # run:   cmake -S . -B build

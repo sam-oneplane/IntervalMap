@@ -18,6 +18,9 @@ public:
 			std::cout << it->first << " : " << it->second << '\t'; 
 		std::cout << std::endl << "----------" << std::endl;
 	}
+	std::map<K,V> &get_imap() {
+		return m_map;
+	}
 	// Assign value val to interval [keyBegin, keyEnd).
 	// Overwrite previous values in this interval.
 	// Conforming to the C++ Standard Library conventions, the interval
@@ -61,7 +64,6 @@ public:
             
 		// mark the keyEnd calculated value
 		V endVal = (m_map.contains(keyEnd))? nextVal : std::prev(itEnd)->second;
-        //std::cout << "prev " << prevVal << ", next " << nextVal << ", end " << endVal << std::endl; 
         // check if val is legal in range [keyBegin, keyEnd)
 		if (!(prevVal == val) && !(val == nextVal))
 		{   
